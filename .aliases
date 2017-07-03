@@ -1,0 +1,49 @@
+alias rbp="source ~/.bash_profile"
+alias exer="cd /Users/travishaby/exercism
+ls"
+alias guild="cd /Users/travishaby/dev/guild
+ls"
+alias otter="cd /Users/travishaby/dev/ottercomplete
+ls"
+alias sparkle="cd /Users/travishaby/dev/sparkletown
+ls"
+alias gt="cd /Users/travishaby/dev/guild-tuition
+ls"
+alias gtf="cd /Users/travishaby/dev/guild-tuition-frontend
+ls"
+alias sv="cd /Users/travishaby/dev/svalbard
+ls"
+alias pig="cd /Users/travishaby/dev/pigpen
+ls"
+alias ..="cd .."
+alias iterm="open ~iTerm"
+alias rt="rake test"
+alias ls="ls -a"
+alias c="clear"
+
+#rails
+alias rs="rails s"
+alias rc="rails c"
+
+# bundler
+alias be="bundle exec"
+
+# Application and web shortcuts
+alias nyt="open http://www.nytimes.com"
+alias goog="open http://www.google.com"
+
+# Git aliases
+alias gs="git status"
+alias gb="git checkout -b"
+alias ga="git add"
+alias gc="git commit -m"
+alias gd="git diff"
+alias push="git push origin"
+alias pull="git pull origin"
+alias check="git checkout"
+alias rebase="git rebase"
+
+# Misspellings
+alias atmo="atom"
+alias amto="atom"
+alias aotm="atom"
