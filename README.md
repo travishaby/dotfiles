@@ -1,3 +1,3 @@
 # Dot Files
 
-Config files for my dev environment--maybe I'll actually keep this up-to-date :D
+Config files for dev environment. Last updated 2020-12-12.
