@@ -122,36 +122,17 @@ alias prune="git fetch -p && for branch in `git branch -vv | grep ': gone]' | aw
 
 # Aliases for aws Okta SSO
 alias logdev="aws sso login --profile guild-dev"
+alias logstag="aws sso login --profile guild-staging"
 alias logprod="aws sso login --profile guild-prod"
 
 # wrapper aliases for aws profiles via Okta SSO
 alias wrapdev="aws2-wrap --profile guild-dev"
+alias wrapstag="aws2-wrap --profile guild-staging"
 alias wrapprod="aws2-wrap --profile guild-prod"
 
 # NVM path
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
-# Read .nvmrc file for node version
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # Helpful Functions
 function ports () { lsof -n -i:${1:-8080} | grep LISTEN; }
@@ -159,6 +140,3 @@ function nm () { ./node_modules/.bin/${1} "${@:2}"; }
 function scripts () { cat package.json | grep scripts -A 30 }
 
 source ~/.zshrc.tokens
-
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/travishaby/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
